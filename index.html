@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Giriş Ekranı -->
+  <!-- Kullanıcı Giriş Ekranı -->
   <div id="loginScreen" class="login-screen">
     <div class="login-box">
       <h1>💬 Messenger Loop</h1>
@@ -18,22 +18,7 @@
     </div>
   </div>
 
-  <!-- Yönetici (Admin) Paneli -->
-  <div id="adminScreen" class="admin-screen hidden">
-    <div class="admin-box">
-      <h1>👑 Yönetici Paneli</h1>
-      <p>Kullanıcı eklemek için Kod = İsim yazın</p>
-      <div class="admin-form">
-        <input id="adminCode" type="text" placeholder="Kod (Örn: 123456)" />
-        <input id="adminName" type="text" placeholder="Gerçek İsim (Örn: Ali)" />
-        <button id="addUserBtn">Ekle</button>
-      </div>
-      <ul id="adminUserList" class="admin-list"></ul>
-      <button id="adminCloseBtn" class="close-btn">Çıkış</button>
-    </div>
-  </div>
-
-  <!-- Uygulama -->
+  <!-- Sohbet Uygulaması -->
   <div id="app" class="app hidden">
     <aside class="sidebar">
       <div class="sidebar-header">
@@ -48,9 +33,9 @@
 
     <main class="chat">
       <header class="chat-header">
-        <div class="avatar" id="chatAvatar">#</div>
+        <div class="avatar" id="chatAvatar">M</div>
         <div class="chat-title">
-          <strong id="chatName">Sohbet Odası</strong>
+          <strong>Messenger Loop</strong>
           <small>çevrimiçi</small>
         </div>
       </header>
