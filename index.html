@@ -11,39 +11,47 @@
   <div id="loginScreen" class="login-screen">
     <div class="login-box">
       <h1>💬 Messenger Loop</h1>
-      <p>Adını gir ve sohbete katıl</p>
-      <input id="usernameInput" type="text" maxlength="20" placeholder="Adın" />
+      <p>Giriş kodunu gir</p>
+      <input id="codeInput" type="text" maxlength="20" placeholder="Örn: 123456" />
       <button id="loginBtn">Giriş Yap</button>
       <small id="loginError"></small>
     </div>
   </div>
 
+  <!-- Yönetici (Admin) Paneli -->
+  <div id="adminScreen" class="admin-screen hidden">
+    <div class="admin-box">
+      <h1>👑 Yönetici Paneli</h1>
+      <p>Kullanıcı eklemek için Kod = İsim yazın</p>
+      <div class="admin-form">
+        <input id="adminCode" type="text" placeholder="Kod (Örn: 123456)" />
+        <input id="adminName" type="text" placeholder="Gerçek İsim (Örn: Ali)" />
+        <button id="addUserBtn">Ekle</button>
+      </div>
+      <ul id="adminUserList" class="admin-list"></ul>
+      <button id="adminCloseBtn" class="close-btn">Çıkış</button>
+    </div>
+  </div>
+
   <!-- Uygulama -->
   <div id="app" class="app hidden">
-    <!-- Sol Panel (Masaüstü için, mobilde gizli) -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="avatar" id="meAvatar">?</div>
-        <span class="app-title">Messenger Loop</span>
+        <span class="app-title" id="meRealName">...</span>
       </div>
-      <ul id="chatList" class="chat-list">
-        <li class="active">
-          <div class="avatar">M</div>
-          <div class="info">
-            <div class="name">Messenger Loop</div>
-            <div class="preview">Sohbet Odası</div>
-          </div>
-        </li>
-      </ul>
+      <div class="online-users-box">
+        <h4>Çevrimiçi Kullanıcılar</h4>
+        <ul id="onlineList" class="online-list"></ul>
+      </div>
     </aside>
 
-    <!-- Sağ Panel (Sohbet) -->
     <main class="chat">
       <header class="chat-header">
-        <div class="avatar" id="chatAvatar">M</div>
+        <div class="avatar" id="chatAvatar">#</div>
         <div class="chat-title">
-          <strong id="chatName">Messenger Loop</strong>
-          <small id="chatSub">çevrimiçi</small>
+          <strong id="chatName">Sohbet Odası</strong>
+          <small>çevrimiçi</small>
         </div>
       </header>
       
@@ -52,9 +60,7 @@
       <form id="messageForm" class="message-form">
         <input id="messageInput" type="text" placeholder="Bir mesaj yazın" autocomplete="off" />
         <button type="submit" title="Gönder">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-          </svg>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
         </button>
       </form>
     </main>
