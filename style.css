@@ -5,65 +5,66 @@
   --wa-bubble-me: #d9fdd3; --wa-bubble-other: #fff;
   --wa-text: #111b21; --wa-muted: #667781;
 }
-html, body { 
-  font-family: "Segoe UI", Helvetica, Arial, sans-serif; 
-  background: #d1d7db; 
-  height: 100%; 
-  height: 100dvh;
-  color: var(--wa-text); 
-  overflow: hidden; 
-}
+html, body { font-family: "Segoe UI", Helvetica, Arial, sans-serif; background: #d1d7db; height: 100%; height: 100dvh; color: var(--wa-text); overflow: hidden; }
 .hidden { display: none !important; }
 
-/* GİRİŞ EKRANI */
-.login-screen { height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00a884, #008069); padding: 20px; }
-.login-box { background: #fff; padding: 32px 28px; border-radius: 12px; width: 100%; max-width: 400px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
-.login-box h1 { font-size: 22px; margin-bottom: 6px; }
-.login-box p { color: var(--wa-muted); margin-bottom: 18px; font-size: 14px; }
-.login-box input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 10px; font-size: 15px; outline: none; }
-.login-box input:focus { border-color: var(--wa-green); }
-.login-box button { width: 100%; padding: 12px; border: none; background: var(--wa-green); color: #fff; font-size: 15px; border-radius: 8px; cursor: pointer; }
-.login-box button:hover { background: var(--wa-green-dark); }
-#loginError { display: block; color: #d93025; margin-top: 8px; font-size: 13px; min-height: 16px; }
+/* GİRİŞ & YÖNETİCİ EKRANI */
+.login-screen, .admin-screen { height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #00a884, #008069); padding: 20px; }
+.login-box, .admin-box { background: #fff; padding: 32px 28px; border-radius: 12px; width: 100%; max-width: 450px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+.login-box h1, .admin-box h1 { font-size: 22px; margin-bottom: 6px; }
+.login-box p, .admin-box p { color: var(--wa-muted); margin-bottom: 18px; font-size: 14px; }
+.login-box input, .admin-form input, #adminAuth input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 10px; font-size: 15px; outline: none; }
+.login-box button, .admin-form button, #adminAuth button { width: 100%; padding: 12px; border: none; background: var(--wa-green); color: #fff; font-size: 15px; border-radius: 8px; cursor: pointer; }
+#loginError, #authError { display: block; color: #d93025; margin-top: 8px; font-size: 13px; min-height: 16px; }
+
+/* YÖNETİCİ PANELİ EKSTRALARI */
+.admin-form { display: flex; gap: 8px; margin-bottom: 20px; }
+.admin-form input { margin-bottom: 0; }
+.admin-form button { width: auto; padding: 0 20px; }
+.admin-list { list-style: none; text-align: left; margin-bottom: 20px; max-height: 200px; overflow-y: auto; border: 1px solid #eee; border-radius: 8px; }
+.admin-list li { padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+.admin-list li:last-child { border-bottom: none; }
+.close-btn { display: block; text-align: center; text-decoration: none; background: #d93025; color: white; padding: 12px; border-radius: 8px; font-weight: bold; }
 
 /* ANA UYGULAMA */
 .app { display: flex; height: 100%; max-width: 1600px; margin: 0 auto; background: var(--wa-panel); box-shadow: 0 0 20px rgba(0,0,0,.15); }
-
-/* YAN PANEL (Masaüstü) */
-.sidebar { width: 340px; min-width: 300px; display: flex; flex-direction: column; background: var(--wa-panel); border-right: 1px solid #e9edef; }
-.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 10px 16px; background: var(--wa-header); }
+.sidebar { width: 320px; display: flex; flex-direction: column; background: var(--wa-panel); border-right: 1px solid #e9edef; }
+.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 15px; background: var(--wa-header); }
 .app-title { font-weight: 600; font-size: 16px; flex: 1; }
+.online-users-box { padding: 15px; flex: 1; overflow-y: auto; }
+.online-users-box h4 { font-size: 13px; color: var(--wa-muted); margin-bottom: 10px; text-transform: uppercase; }
+.online-list { list-style: none; }
+.online-list li { padding: 8px 0; font-size: 15px; color: var(--wa-text); display: flex; align-items: center; gap: 8px; }
+.online-list li::before { content: ''; display: block; width: 8px; height: 8px; background: var(--wa-green); border-radius: 50%; }
+
 .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--wa-green-dark); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 18px;}
-.chat-list { list-style: none; overflow-y: auto; flex: 1; }
-.chat-list li { display: flex; align-items: center; gap: 12px; padding: 12px 16px; cursor: pointer; background: #f0f2f5; border-bottom: 1px solid #e9edef; }
-.chat-list .info { flex: 1; min-width: 0; }
-.chat-list .name { font-size: 15px; font-weight: 500; }
-.chat-list .preview { font-size: 13px; color: var(--wa-muted); }
 
 /* SOHBET EKRANI */
 .chat { flex: 1; display: flex; flex-direction: column; background: var(--wa-bg); min-height: 0; position: relative; background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); background-size: cover; }
 .chat-header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: var(--wa-header); border-bottom: 1px solid #e9edef; flex-shrink: 0; z-index: 10;}
-.chat-title { display: flex; flex-direction: column; }
+.chat-title { display: flex; flex-direction: column; cursor: pointer; }
 .chat-title strong { font-size: 16px; }
-.chat-title small { color: var(--wa-muted); font-size: 13px; }
+.chat-title small { color: var(--wa-green); font-size: 13px; }
 
 /* MESAJLAR */
 .messages { flex: 1; overflow-y: auto; padding: 20px 5%; display: flex; flex-direction: column; gap: 8px; }
-.msg { max-width: 85%; padding: 8px 10px 6px; border-radius: 8px; font-size: 14.5px; line-height: 1.4; box-shadow: 0 1px 1px rgba(0,0,0,.1); word-wrap: break-word; align-self: flex-start; background: var(--wa-bubble-other); border-top-left-radius: 0; position: relative;}
-.msg.me { align-self: flex-end; background: var(--wa-bubble-me); border-top-left-radius: 8px; border-top-right-radius: 0; }
-.msg .sender { display: block; font-size: 12px; font-weight: 600; color: var(--wa-green-dark); margin-bottom: 2px; }
-.msg.me .sender { display: none; }
+.msg-container { display: flex; flex-direction: column; align-self: flex-start; max-width: 85%; }
+.msg-container.me { align-self: flex-end; }
+.msg { padding: 8px 10px 6px; border-radius: 8px; font-size: 14.5px; line-height: 1.4; box-shadow: 0 1px 1px rgba(0,0,0,.1); word-wrap: break-word; background: var(--wa-bubble-other); border-top-left-radius: 0; position: relative;}
+.msg-container.me .msg { background: var(--wa-bubble-me); border-top-left-radius: 8px; border-top-right-radius: 0; }
+.msg .sender { display: block; font-size: 12px; font-weight: 600; color: var(--wa-green-dark); margin-bottom: 2px; cursor: pointer; text-decoration: underline; }
+.msg-container.me .msg .sender { display: none; }
 .msg .time { font-size: 11px; color: var(--wa-muted); float: right; margin: 8px 0 0 10px; }
+.msg .delete-btn { display: none; position: absolute; top: -10px; right: -10px; background: #d93025; color: white; border: none; border-radius: 50%; width: 24px; height: 24px; cursor: pointer; font-size: 12px; align-items: center; justify-content: center; }
+.msg-container:hover .delete-btn, .msg-container.me .msg:hover .delete-btn { display: flex; }
 
 /* MESAJ YAZMA ALANI */
 .message-form { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--wa-header); flex-shrink: 0; z-index: 10;}
 .message-form input { flex: 1; padding: 12px 16px; border: none; border-radius: 20px; background: #fff; outline: none; font-size: 15px; }
 .message-form button { width: 44px; height: 44px; border-radius: 50%; border: none; background: var(--wa-green); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding-left: 4px;}
-.message-form button:hover { background: var(--wa-green-dark); }
 
-/* 📱 MOBİL UYUM (TELEFON İÇİN) */
 @media (max-width: 720px) {
   .app { flex-direction: column; }
-  .sidebar { display: none; } /* Telefonda sol menüyü gizle, direkt sohbete gir */
+  .sidebar { display: none; } 
   .chat { width: 100%; height: 100%; }
 }
