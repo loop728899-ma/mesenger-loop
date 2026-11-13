@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messenger Loop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Giriş -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <h1>💬 Messenger Loop</h1>
+      <p>Adını gir ve sohbete katıl</p>
+      <input id="usernameInput" type="text" maxlength="20" placeholder="Adın" />
+      <button id="loginBtn">Giriş Yap</button>
+      <small id="loginError"></small>
+    </div>
+  </div>
+
+  <!-- Uygulama -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="avatar" id="meAvatar">?</div>
+        <span class="app-title">Messenger Loop</span>
+        <span id="onlineCount" class="online-count"></span>
+      </div>
+      <ul id="chatList" class="chat-list"></ul>
+    </aside>
+
+    <main class="chat">
+      <header class="chat-header">
+        <div class="avatar" id="chatAvatar">#</div>
+        <div class="chat-title">
+          <strong id="chatName">Genel</strong>
+          <small id="chatSub">grup</small>
+        </div>
+      </header>
+      <div id="messages" class="messages"></div>
+      <form id="messageForm" class="message-form">
+        <input id="messageInput" type="text" placeholder="Bir mesaj yazın" autocomplete="off" />
+        <button type="submit">➤</button>
+      </form>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
