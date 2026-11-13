@@ -2,12 +2,12 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Messenger Loop</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Giriş -->
+  <!-- Giriş Ekranı -->
   <div id="loginScreen" class="login-screen">
     <div class="login-box">
       <h1>💬 Messenger Loop</h1>
@@ -20,27 +20,42 @@
 
   <!-- Uygulama -->
   <div id="app" class="app hidden">
+    <!-- Sol Panel (Masaüstü için, mobilde gizli) -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="avatar" id="meAvatar">?</div>
         <span class="app-title">Messenger Loop</span>
-        <span id="onlineCount" class="online-count"></span>
       </div>
-      <ul id="chatList" class="chat-list"></ul>
+      <ul id="chatList" class="chat-list">
+        <li class="active">
+          <div class="avatar">M</div>
+          <div class="info">
+            <div class="name">Messenger Loop</div>
+            <div class="preview">Sohbet Odası</div>
+          </div>
+        </li>
+      </ul>
     </aside>
 
+    <!-- Sağ Panel (Sohbet) -->
     <main class="chat">
       <header class="chat-header">
-        <div class="avatar" id="chatAvatar">#</div>
+        <div class="avatar" id="chatAvatar">M</div>
         <div class="chat-title">
-          <strong id="chatName">Genel</strong>
-          <small id="chatSub">grup</small>
+          <strong id="chatName">Messenger Loop</strong>
+          <small id="chatSub">çevrimiçi</small>
         </div>
       </header>
+      
       <div id="messages" class="messages"></div>
+      
       <form id="messageForm" class="message-form">
         <input id="messageInput" type="text" placeholder="Bir mesaj yazın" autocomplete="off" />
-        <button type="submit">➤</button>
+        <button type="submit" title="Gönder">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+          </svg>
+        </button>
       </form>
     </main>
   </div>
