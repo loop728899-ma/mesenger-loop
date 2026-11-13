@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yönetici Paneli - Messenger Loop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="admin-screen">
+    <div class="admin-box">
+      <h1>👑 Yönetici Paneli</h1>
+      
+      <!-- Yönetici Şifre Girişi -->
+      <div id="adminAuth">
+        <p>Devam etmek için yönetici şifresini girin.</p>
+        <input id="adminPass" type="password" placeholder="Şifre" />
+        <button id="authBtn">Giriş</button>
+        <small id="authError"></small>
+      </div>
+
+      <!-- Kullanıcı Yönetim Ekranı -->
+      <div id="adminPanel" class="hidden">
+        <p>Kullanıcı eklemek için Kod = İsim yazın</p>
+        <div class="admin-form">
+          <input id="adminCode" type="text" placeholder="Kod (Örn: 123456)" />
+          <input id="adminName" type="text" placeholder="Gerçek İsim (Örn: Ali)" />
+          <button id="addUserBtn">Ekle</button>
+        </div>
+        <ul id="adminUserList" class="admin-list"></ul>
+        <a href="index.html" class="close-btn">Uygulamaya Dön</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
